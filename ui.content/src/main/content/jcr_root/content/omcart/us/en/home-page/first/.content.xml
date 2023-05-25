@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2023-04-27T10:26:05.078+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/omcart/settings/wcm/templates/omcart-content-page-template"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="first"
+        sling:resourceType="omcart/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="omcart/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="omcart/components/container"
+                layout="responsiveGrid">
+                <countrycomponent
+                    jcr:created="{Date}2023-04-24T14:19:22.740+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2023-04-24T14:29:18.058+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="omcart/components/countrycomponent"
+                    country="IN"/>
+                <fourth
+                    jcr:created="{Date}2023-04-24T14:25:58.547+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2023-04-24T14:25:58.547+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="omcart/components/fourth"/>
+                <studentdetailscompon
+                    jcr:created="{Date}2023-04-26T13:34:17.518+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2023-04-26T16:04:36.116+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="omcart/components/studentdetailscomponent"
+                    stream="test"
+                    studentID="123"
+                    studentName="om "/>
+                <fifth_1351166768
+                    jcr:created="{Date}2023-04-26T18:30:12.659+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2023-04-27T10:26:05.072+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="omcart/components/fifth"
+                    fileReference="/content/dam/wknd-shared/en/adventures/ski-touring-mont-blanc/adobestock-75620750.jpeg"
+                    pdesc="infosys .com"
+                    productName="opd------------------------"/>
+                <helloworld
+                    jcr:created="{Date}2023-04-24T14:21:40.680+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2023-04-24T14:21:40.680+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="omcart/components/helloworld"/>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

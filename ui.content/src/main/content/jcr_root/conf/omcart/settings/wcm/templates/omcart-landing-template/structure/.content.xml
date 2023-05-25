@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[mobile/groups/responsive]"
+        cq:lastModified="{Date}2023-04-24T14:09:25.834+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/omcart/settings/wcm/templates/omcart-landing-template"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="omcart/components/page">
+        <root
+            jcr:lastModified="{Date}2023-04-24T13:52:31.248+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="omcart/components/container"
+            layout="responsiveGrid">
+            <experiencefragment_1547004908
+                jcr:created="{Date}2023-04-24T13:55:54.163+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-04-24T14:00:59.935+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"
+                fragmentPath="/content/experience-fragments/omcart/us/en/site/header/master"
+                text="OmCart second page testmmmm en second page testmmmm"/>
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="omcart/components/container"/>
+            <experiencefragment
+                jcr:created="{Date}2023-04-24T13:53:04.535+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-04-24T14:01:32.926+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"
+                fragmentPath="/content/experience-fragments/omcart/us/en/site/footer/master"
+                text="Copyright 2023, OmCart. All rights reserved.Patna Bihar India"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}768"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

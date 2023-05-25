@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="fifth"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <basicdetails
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="basicdetails"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <productname
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="PROVIDE THE NAME OF PRODUCT"
+                                fieldLabel="PRODUCT NAME"
+                                name="./productName"/>
+                            <pdes
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="PROVIDE THE description OF PRODUCT"
+                                fieldLabel="PRODUCT description"
+                                name="./pdesc"/>
+                            <imageupload
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/cq/gui/components/authoring/dialog/fileupload"
+                                fieldDescription="PROVIDE THE image OF PRODUCT"
+                                fieldLabel="PRODUCT image"
+                                name="./imagedata"/>
+                        </items>
+                    </basicdetails>
+                    <advanceddetails
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Advanced Details"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <variation
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Variation">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./variation">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <variationName
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Provide the name of the variation of the product"
+                                            fieldLabel="Variation Name"
+                                            name="./variationName"
+                                            required="{Boolean}true"/>
+                                        <color
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup"
+                                            fieldLabel="Provide colour"
+                                            name="./variationColor"
+                                            selectionMode="single">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <blue
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Blue"
+                                                    value="blue"/>
+                                                <black
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Black"
+                                                    value="black"/>
+                                                <white
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="White"
+                                                    value="white"/>
+                                            </items>
+                                        </color>
+                                        <price
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                            fieldDescription="Provide the cost of the variation of the product"
+                                            fieldLabel="Price"
+                                            min="{Double}1000.0"
+                                            name="./variationPrice"
+                                            required="{Boolean}true"
+                                            step="100"/>
+                                    </items>
+                                </field>
+                            </variation>
+                        </items>
+                    </advanceddetails>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

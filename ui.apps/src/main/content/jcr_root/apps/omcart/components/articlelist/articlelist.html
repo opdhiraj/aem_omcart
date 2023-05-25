@@ -1,0 +1,12 @@
+<h1>This is article list</h1>
+
+<sly data-sly-use.model="com.omcart.core.models.ArticleListModel">
+  <h2>${model.articleRootPath}</h2>
+  <br />
+  <sly data-sly-list.articleList="${model.articleListDataBeanArray}">
+    <h3>${articleList.title}</h3>
+    <br />
+    <h3>${articleList.path}</h3>
+    <br />
+  </sly>
+</sly>

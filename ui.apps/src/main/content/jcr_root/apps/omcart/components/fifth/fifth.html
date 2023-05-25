@@ -1,0 +1,13 @@
+<div data-sly-use.model="com.omcart.core.models.BasicDetails">
+  <h1>${model.productName}</h1>
+</div>
+
+<img src="${properties.fileReference}" width="200px" height="200px" />
+<img src="${properties.jcr:data}" width="200px" height="200px" />
+<h2>${properties.pdesc}</h2>
+
+<!--/* <div data-sly-use.fifth="com.omcart.core.services.VariationService">
+  <ul data-sly-list.item="${fifth.getList}">
+    <li>${item.variationName}</li>
+  </ul>
+</div> */-->
