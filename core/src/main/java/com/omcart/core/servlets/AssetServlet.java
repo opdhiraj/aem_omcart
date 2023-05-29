@@ -19,7 +19,9 @@ import javax.jcr.Session;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component(service = Servlet.class,
@@ -61,6 +63,9 @@ public class AssetServlet extends SlingSafeMethodsServlet {
         predicate.put("type","dam:Asset");
         Query query=null;
 
+        List<String>list=new ArrayList<>();
+        List<String>listone=new ArrayList<>();
+
         try {
 
             query=qb.createQuery(PredicateGroup.create(predicate),session);
@@ -73,13 +78,18 @@ public class AssetServlet extends SlingSafeMethodsServlet {
 
         for (Hit hit :searchResult.getHits()){
             try {
-
-              LOGGER.debug("single hit--> {} ,</br>res::::: {} ",hit.getPath(),hit.getResource().getValueMap().keySet());
+             String path= hit.getPath();
+             list.add(path);
+                LOGGER.debug("path ----> {} " ,path);
+//              LOGGER.debug("single hit--> {} ,</br>res::::: {} ",hit.getPath(),hit.getResource().getValueMap().keySet());
 
             }catch (Exception e){
                 LOGGER.error("err {} ",e);
             }
+
         }
+
+        LOGGER.debug("list {} " ,list);
 //        LOGGER.debug("AssetServlet {}", resource.getName());
 
         response.setContentType("text/html");
