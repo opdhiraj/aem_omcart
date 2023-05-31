@@ -6,8 +6,12 @@ import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceMetadata;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
@@ -46,6 +50,9 @@ import java.util.Map;
 
 public class AssetServlet extends SlingSafeMethodsServlet {
 
+//    @Reference
+//    AssetServletModel assetServletModel;
+
 
     private  static final String QUERY_PATH="/content/dam/omcart";
 
@@ -79,8 +86,12 @@ public class AssetServlet extends SlingSafeMethodsServlet {
         for (Hit hit :searchResult.getHits()){
             try {
              String path= hit.getPath();
+                Resource resource=resourceResolver.getResource(path);
+                ResourceMetadata valueMap=resource.getResourceMetadata();
+                LOGGER.debug("valueMetadata:--->>>>{}", valueMap);
+
              list.add(path);
-                LOGGER.debug("path ----> {} " ,path);
+//                LOGGER.debug("path ----> {} " ,path);
 //              LOGGER.debug("single hit--> {} ,</br>res::::: {} ",hit.getPath(),hit.getResource().getValueMap().keySet());
 
             }catch (Exception e){
@@ -90,10 +101,17 @@ public class AssetServlet extends SlingSafeMethodsServlet {
         }
 
         LOGGER.debug("list {} " ,list);
+//        assetServletModel.servletData( list);
 //        LOGGER.debug("AssetServlet {}", resource.getName());
 
-        response.setContentType("text/html");
-//        response.getWriter().write("page title "+" <h1>"+resource.getName()+"</h1>" );
+       ObjectWriter ow=new ObjectMapper().writer().withDefaultPrettyPrinter();
+       String json = ow.writeValueAsString(list);
+//        assetServletModel.servletData(list);
+
+      //  response.setContentType("text/html");
+       response.setContentType("application/json");
+        response.getWriter().write(json );
+       // response.getWriter().write(json);
     }
 
 

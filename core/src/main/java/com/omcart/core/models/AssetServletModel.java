@@ -21,4 +21,8 @@ public class AssetServletModel {
         LOGGER.debug("AssetServletModel------->");
     }
 
+//    public void servletData(List data){
+//        LOGGER.debug("data  assetservlet{} ", data);
+//    }
+
 }
