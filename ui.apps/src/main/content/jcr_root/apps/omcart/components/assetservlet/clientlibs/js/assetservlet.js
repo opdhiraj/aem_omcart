@@ -31,3 +31,9 @@ function displayResponse(res) {
     assetpath.append(anc);
   });
 }
+
+//for coral component
+var alert = new Coral.Alert();
+alert.header.innerHTML = "Hey!";
+alert.content.innerHTML = "This is an alert.";
+alert.variant = "info";

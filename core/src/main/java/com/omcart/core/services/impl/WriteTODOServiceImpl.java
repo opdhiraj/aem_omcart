@@ -34,7 +34,8 @@ public class WriteTODOServiceImpl  implements  WriteTODOService{
     private static final String ID = "id";
     private static final String TITLE = "title";
     private static final String COMPLETED = "completed";
-    private static final String TODO_DATA_NODE = "omcart/data/todo";
+    private static final String TODO_DATA_NODE = "data/todo";
+    private static final String TODO_DATA_NODETYPE = "jcr:primaryType";
 
     @Reference
     ResourceResolverService resourceResolverService;
@@ -42,6 +43,7 @@ public class WriteTODOServiceImpl  implements  WriteTODOService{
     @Override
     public void writeData(String todoData) throws LoginException {
         // Check if data is not empty
+       // LOGGER.debug("todoDatawritrdata 45 {}, " ,todoData);
         if (todoData != null && !todoData.isEmpty()) {
             // Get instance of ResourceResolver
             ResourceResolver resourceResolver = resourceResolverService.getResourceResolver();
@@ -51,15 +53,19 @@ public class WriteTODOServiceImpl  implements  WriteTODOService{
             try {
                 if (session != null) {
                     // Get the reference of the root node
-                    Node node = session.getRootNode();
+                    Node node = session.getNode("/apps/omcart");
+                    LOGGER.debug("node  {}",node);
                     if (!session.nodeExists(FORWARD_SLASH + TODO_DATA_NODE)) {
                         String[] nodePaths = TODO_DATA_NODE.split(FORWARD_SLASH);
+                        LOGGER.debug("nodePaths len {}",nodePaths.length);
                         for (String path : nodePaths) {
-                            node = node.addNode(path);
+                            node = node.addNode(path,"nt:folder");
+                            LOGGER.debug("node 63 {}",node);
                             session.save();
                         }
                     } else {
                         node = node.getNode(FORWARD_SLASH + TODO_DATA_NODE);
+                        LOGGER.debug("nodeelse  {}",node);
                     }
                     JSONArray jsonArray = new JSONArray(todoData);
                     for (int i = 0; i < jsonArray.length(); i++) {

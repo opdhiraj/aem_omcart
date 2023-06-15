@@ -43,7 +43,7 @@ public class ResourceResolverServiceImpl implements ResourceResolverService {
                         serviceUserMap.put(ResourceResolverFactory.SUBSERVICE, SUB_SERVICE);
                         // Get the instance of Service Resource Resolver
                         resourceResolver = resourceResolverFactory.getServiceResourceResolver(serviceUserMap);
-                        LOGGER.debug("resourceResolver 46 {}",resourceResolver.getUserID());
+                        LOGGER.debug("resourceResolverimpl 46 {}",resourceResolver.getUserID());
 
                 } catch (LoginException e) {
                         LOGGER.error("{}: Exception occurred while getting resource resolver: {}",  e.getMessage());

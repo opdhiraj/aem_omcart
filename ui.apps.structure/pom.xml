@@ -49,6 +49,8 @@
 
                         <!-- DAM folder root, will be created via repoinit -->
                         <filter><root>/content/dam/omcart</root></filter>
+<!--                 for acs errorhandler-->
+                        <filter><root>/apps/sling/servlet</root></filter>
 
                     </filters>
                 </configuration>
