@@ -305,6 +305,7 @@
                                           
               <configuration>
                                                 
+                <!--suppress UnresolvedMavenProperty -->
                 <bnd>
                   <![CDATA[
 Bundle-Category: ${componentGroupName}

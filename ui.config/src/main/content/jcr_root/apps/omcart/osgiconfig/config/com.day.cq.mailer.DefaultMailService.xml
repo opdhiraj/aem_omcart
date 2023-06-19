@@ -1,0 +1,10 @@
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="sling:OsgiConfig"
+          debug.email="{Boolean}false"
+          from.address="om.dhiraj@infosys.com"
+          smtp.host="smtp.sendgrid.net"
+          smtp.password="put apikey and not to commit to git github"
+          smtp.port="465"
+          smtp.ssl="{Boolean}true"
+          smtp.user="apikey"/>

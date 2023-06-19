@@ -3,5 +3,5 @@
     <filter root="/apps/omcart/clientlibs"/>
     <filter root="/apps/omcart/components"/>
     <filter root="/apps/omcart/i18n"/>
-    <filter root="/apps/sling/servlet/errorhandler"/>
+
 </workspaceFilter>

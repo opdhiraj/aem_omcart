@@ -1,6 +1,8 @@
 package com.omcart.core.servlets;
 
 
+import com.day.cq.dam.api.Asset;
+import com.day.cq.dam.api.Rendition;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
@@ -87,6 +89,21 @@ public class AssetServlet extends SlingSafeMethodsServlet {
             try {
              String path= hit.getPath();
                 Resource resource=resourceResolver.getResource(path);
+
+
+              // to get the asset rendition
+                 Asset asset=    resource.adaptTo(Asset.class);
+                if(asset != null) {
+                    List<Rendition> renditionList = asset.getRenditions();
+                    for (Rendition r : renditionList) {
+                        //logging all rendition
+                        LOGGER.debug("asset rendition {} ", r);
+                    }
+                }
+
+
+
+
                 ResourceMetadata valueMap=resource.getResourceMetadata();
                 LOGGER.debug("valueMetadata:--->>>>{}", valueMap);
 
@@ -100,7 +117,7 @@ public class AssetServlet extends SlingSafeMethodsServlet {
 
         }
 
-        LOGGER.debug("list {} " ,list);
+            LOGGER.debug("list {} " ,list);
 //        assetServletModel.servletData( list);
 //        LOGGER.debug("AssetServlet {}", resource.getName());
 
